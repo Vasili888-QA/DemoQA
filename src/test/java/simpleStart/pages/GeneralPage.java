@@ -16,7 +16,7 @@ public class GeneralPage {
         Selenide.open("https://demoqa.com/" + endpoint + "");
     }
 
-    public void mainPageDemoQAOpened() {
+    public void mainPageOnDemoQAOpened() {
         Selenide.$x("//div[@class='card-body']/h5[contains(text(),'Elements')]").shouldBe(visible).shouldHave(text("Elements"));
     }
 

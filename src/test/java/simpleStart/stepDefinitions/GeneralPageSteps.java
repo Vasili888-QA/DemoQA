@@ -14,9 +14,9 @@ public class GeneralPageSteps {
         generalPage.openDemoQASite(endpoint);
     }
 
-    @And("Main page DemoQA is open")
-    public void mainPageDemoQAIsOpen() {
-        generalPage.mainPageDemoQAOpened();
+    @And("Main page is open")
+    public void mainPageOnDemoQAOpened() {
+        generalPage.mainPageOnDemoQAOpened();
     }
 
     @When("I click to card {string}")

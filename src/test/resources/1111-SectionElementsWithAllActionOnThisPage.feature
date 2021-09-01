@@ -3,6 +3,6 @@ Feature: Feature file #1 with Cucumber - Available action on Elements Section in
 
   Scenario: Open Elements Section and check elements on the page
     Given Open DemoQA site with endpoint " "
-    And Main page DemoQA is open
+    And Main page is open
     When I click to card "Elements"
     Then Elements page is open with title "Elements"
