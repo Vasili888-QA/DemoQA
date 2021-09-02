@@ -5,4 +5,4 @@ Feature: Feature file #1 with Cucumber - Available action on Elements Section in
     Given Open DemoQA site with endpoint " "
     And Main page is open
     When I click to card "Elements"
-    Then Elements page is open with title "Elements"
+    Then Page is open with title "Elements"

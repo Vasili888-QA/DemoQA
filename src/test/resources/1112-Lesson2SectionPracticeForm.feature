@@ -3,7 +3,7 @@ Feature: Lesson #2 - Available action on Section Practice Form in the DemoQA sit
 
   Scenario: Fill Practice Form and submit it
     Given Open DemoQA site with endpoint "automation-practice-form"
-    And Elements page is open with title "Practice Form"
+    And Page is open with title "Practice Form"
     When I enter "Vasili" in the field "firstName"
     And I enter "QA" in the field "lastName"
     And I enter "test@mail.ru" in the field "userEmail"

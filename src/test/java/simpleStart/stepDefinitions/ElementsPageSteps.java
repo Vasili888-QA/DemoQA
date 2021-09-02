@@ -7,8 +7,8 @@ import simpleStart.pages.ElementsPage;
 public class ElementsPageSteps {
     ElementsPage elementsPage = new ElementsPage();
 
-    @Then("Elements page is open with title {string}")
-    public void elementsPageIsOpenWithTitle(String titleName) {
-        elementsPage.elementsPageIsOpenWithTitle(titleName);
+    @Then("Page is open with title {string}")
+    public void pageIsOpenWithTitle(String titleName) {
+        elementsPage.pageIsOpenWithTitle(titleName);
     }
 }
