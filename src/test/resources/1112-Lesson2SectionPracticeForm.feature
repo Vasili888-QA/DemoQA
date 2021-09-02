@@ -12,4 +12,4 @@ Feature: Lesson #2 - Available action on Section Practice Form in the DemoQA sit
     And I enter "Test description" on the field Subject
     Then Pop-up is open with title "Thanks for submitting the form"
     And I click button "Close"
-    And Elements page is open with title "Practice Form"
+    And Page is open with title "Practice Form"
