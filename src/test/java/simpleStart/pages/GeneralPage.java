@@ -12,10 +12,6 @@ public class GeneralPage {
 //        open(baseUrl);
 //    }
 
-    public void openDemoQASite(String endpoint) {
-        Selenide.open("https://demoqa.com/" + endpoint + "");
-    }
-
     public void mainPageOnDemoQAOpened() {
         Selenide.$x("//div[@class='card-body']/h5[contains(text(),'Elements')]").shouldBe(visible).shouldHave(text("Elements"));
     }
@@ -23,5 +19,9 @@ public class GeneralPage {
     public void iClickToCard(String cardName) {
         //Selenide.$x("//div[@class='card-body']/h5[contains(text(),'Book Store Application')]").scrollIntoView("end");
         Selenide.$x("//div[@class='card-body']/h5[contains(text(),'" + cardName + "')]").click();
+    }
+
+    public void openSite(String siteURL, String endpoint) {
+        Selenide.open("https://" + siteURL + endpoint);
     }
 }
