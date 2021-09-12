@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class PracticeFormPage {
     public void iEnterInTheField(String inputData, String fieldName) {
-       $x("//input[@id='" + fieldName + "']").setValue(inputData).pressEnter();
+        Selenide.$x("//input[@id='" + fieldName + "']").setValue(inputData);
     }
 
     public void selectRadioButtonFemale(String fieldName) {
