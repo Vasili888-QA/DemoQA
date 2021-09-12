@@ -1,5 +1,6 @@
 package simpleStart.stepDefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,6 +10,7 @@ import simpleStart.pages.components.CalendarComponent;
 public class PracticeFormPageSteps {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
     CalendarComponent calendar = new CalendarComponent();
+    Faker faker = new Faker();
 
     @When("I enter {string} in the field {string}")
     public void iEnterInTheField(String inputData, String fieldName) {
@@ -23,6 +25,12 @@ public class PracticeFormPageSteps {
     @And("I enter {string} on the field Subject")
     public void iEnterOnTheFieldSubject(String inputData) {
         practiceFormPage.iEnterOnTheFieldSubject(inputData);
+    }
+
+    @And("I enter random address on the field Current Address")
+    public void iEnterDataOnTheFieldCurrentAddress() {
+        String randomAddress = faker.address().fullAddress();
+        practiceFormPage.iEnterDataOnTheFieldCurrentAddress(randomAddress);
     }
 
     @Then("I click button {string}")
