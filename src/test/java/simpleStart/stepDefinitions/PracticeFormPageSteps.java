@@ -4,9 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import simpleStart.pages.PracticeFormPage;
+import simpleStart.pages.components.CalendarComponent;
 
 public class PracticeFormPageSteps {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
+    CalendarComponent calendar = new CalendarComponent();
 
     @When("I enter {string} in the field {string}")
     public void iEnterInTheField(String inputData, String fieldName) {
@@ -31,5 +33,10 @@ public class PracticeFormPageSteps {
     @Then("Pop-up is open with title {string}")
     public void popUpIsOpenWithTitle(String title) {
         practiceFormPage.popUpIsOpenWithTitle(title);
+    }
+
+    @And("I enter date {string}-{string}-{string} to calendar")
+    public void iEnterDateToCalendar(String day, String month, String year) {
+        calendar.setDate(day, month, year);
     }
 }
