@@ -3,11 +3,12 @@ package simpleStart.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class PracticeFormPage {
     public void iEnterInTheField(String inputData, String fieldName) {
-       $x("//input[@id='" + fieldName + "']").setValue(inputData).pressEnter();
+        Selenide.$x("//input[@id='" + fieldName + "']").setValue(inputData);
     }
 
     public void selectRadioButtonFemale(String fieldName) {
@@ -18,8 +19,12 @@ public class PracticeFormPage {
         $x("//div[@id='subjectsContainer']//input").setValue(inputData).pressEnter();
     }
 
+    public void iEnterDataOnTheFieldCurrentAddress(String randomAddress) {
+        $("#currentAddress").setValue(randomAddress);
+    }
+
     public void iClickButton(String buttonName) {
-        $x("//button[contains(text(),'Close')]").click();
+        $x("//button[contains(text(),'" + buttonName + "')]").click();
     }
 
     public void popUpIsOpenWithTitle(String title) {

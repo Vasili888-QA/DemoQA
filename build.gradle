@@ -23,7 +23,7 @@ allure {
 }
 
 dependencies {
-    implementation (
+    implementation(
             'io.qameta.allure:allure-cucumber6-jvm:2.14.0')
     testImplementation(
             'org.aspectj:aspectjweaver:1.9.7',
@@ -36,7 +36,9 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "org.aeonbits.owner:owner:1.0.12",
             'org.assertj:assertj-core:3.20.2',
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            //generate random data with JavaFaker
+            'com.github.javafaker:javafaker:1.0.2')
     testRuntimeOnly(
             'org.slf4j:slf4j-simple:1.7.32',
             "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
@@ -64,9 +66,9 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', \
-                    '--plugin', 'io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm', \
-                    '--strict',  '--glue', 'src/test/resources']
+            args = ['--plugin', 'pretty',  \
+                     '--plugin', 'io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm',  \
+                     '--strict', '--glue', 'src/test/resources']
         }
     }
 }

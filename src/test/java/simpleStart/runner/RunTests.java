@@ -12,3 +12,4 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"})
 public class RunTests {
 }
+
